@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), ''); // Load all env vars
 
   // Replace this with your GitHub repository name for GitHub Pages deployment
-  const GITHUB_REPOSITORY_NAME = 'your-repo-name'; 
+  const GITHUB_REPOSITORY_NAME = 'Geopolitical_analyser'; 
 
   return {
     plugins: [react()],
