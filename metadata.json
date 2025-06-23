@@ -1,0 +1,5 @@
+{
+  "name": "Geopolitical Event Analyzer",
+  "description": "An application to analyze geopolitical events for a specified country and time period using Gemini API with Google Search grounding. Provides summaries, significance, key actors, and sources.",
+  "requestFramePermissions": []
+}
