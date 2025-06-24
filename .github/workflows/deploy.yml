@@ -3,11 +3,12 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Or your default branch
+      - main  # Or your default branch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -15,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # Or your preferred LTS version
+          node-version: '18' # Use your desired Node version
           cache: 'npm'
 
       - name: Install dependencies
@@ -24,10 +25,11 @@ jobs:
       - name: Build project
         run: npm run build
         env:
-          VITE_API_KEY: ${{ secrets.VITE_API_KEY }} # Use the secret
+          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}  # Set in repository secrets
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./dist  # Make sure this matches your actual output dir
+
